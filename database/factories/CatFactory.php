@@ -14,7 +14,7 @@ class CatFactory extends Factory
     {
         return [
             'name' => fake()->name(),
-            'dob' => date(),
+            'dob' => fake()->date($format = 'Y-m-d', $max = 'now'),
             'owner_name' => fake()->name(),
         ];
     }

@@ -14,5 +14,6 @@ class CatSeeder extends Seeder
             'dob' => '2024-06-14',
             'owner_name' => 'Bob',
         ]);
+        Cat::factory(10)->create();
     }
 }

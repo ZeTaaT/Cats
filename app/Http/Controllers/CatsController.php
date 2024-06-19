@@ -24,15 +24,11 @@ class CatsController extends Controller
     }
     public function store(Request $request)
     {
+        //Checks if the input is valid and displays a message in the create blade file
         $validatedData = $request->validate([
             'name' => 'required|string|max:255|regex:/^[a-zA-Z\s]+$/',
             'dob' => 'required|date|before_or_equal:today',
             'owner_name' => 'required|string|max:255|regex:/^[a-zA-Z\s]+$/',
-        ], [
-            'name.required' => 'Name is required.',
-            'name.regex' => 'Name should only contain letters and spaces.',
-            'dob.before_or_equal' => 'Date of birth cannot be in the future.',
-            'owner_name.regex' => 'Owner name should only contain letters and spaces.',
         ]);
         
         $cat = Cat::create($request->all());

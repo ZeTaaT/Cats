@@ -2,7 +2,7 @@
     <h2 >
          {{ __('Add new Cat') }}
     </h2>
-    <form enctype="multipart/form-data" class="mt-6 space-y-6" style="color:DarkRed;" method="POST" action="{{ route('api.postCats')}}">
+    <form enctype="multipart/form-data" class="mt-6 space-y-6" style="color:DarkRed;" method="POST" action="{{ route('cats.store')}}">
         @csrf
         <div>
             <x-input-label for="Header" :value="__('Header')" />

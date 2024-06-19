@@ -8,14 +8,33 @@ use Illuminate\Http\Request;
 
 class CatsController extends Controller
 {
-    public function getAllCats(Cat $cat)
+    public function index()
     {   
-        return view('cats.show');
-    }
+        try {
+            $cats = Cat::all(); // Retrieve all cats from database
 
-    // Handle POST request
-    public function postCats()
+            return response()->json($cats, 200);
+        } catch (\Exception $e) {
+            return response()->json(['error' => 'Failed to retrieve cats.'], 500);
+        }
+    }
+    public function create()
     {
-        return view('cats.show');
+        return view('cats.create');
+    }
+    public function store(Request $request)
+    {
+        $validatedData = $request->validate([
+            'name' => 'required|string|max:255',
+            'dob' => 'required|date|before_or_equal:today',
+            'owner_name' => 'required|string|max:255',
+        ]);
+        
+        $cat = Cat::create($request->all());
+
+        return response()->json([
+            'message' => 'Cat successfully created!',
+            'cat' => $cat,
+        ], 201);
     }
 }

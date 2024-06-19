@@ -31,11 +31,14 @@ class CatsController extends Controller
             'owner_name' => 'required|string|max:255|regex:/^[a-zA-Z\s]+$/',
         ]);
         
-        $cat = Cat::create($request->all());
+        try {
+            $cat = Cat::create($request->all());
 
-        return response()->json([
-            'message' => 'Cat successfully created!',
-            'cat' => $cat,
-        ], 200);
+            return response()->json(['message' => 'Cat successfully created!', 'cat' => $cat,], 200);
+
+        } catch (\Exception $e) {
+            return response()->json(['error' => 'Failed to create cat.'], 500);
+        }
+        
     }
 }

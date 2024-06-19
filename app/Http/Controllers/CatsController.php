@@ -8,59 +8,14 @@ use Illuminate\Http\Request;
 
 class CatsController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        //
+    public function getAllCats(Cat $cat)
+    {   
+        return view('cats.show');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function postCat(Cat $cat)
+    // Handle POST request
+    public function postCats()
     {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function showAllCats()
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Cat $cat)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Cat $cat)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Cat $cat)
-    {
-        //
+        return view('cats.show');
     }
 }

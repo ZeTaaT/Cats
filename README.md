@@ -9,11 +9,17 @@
 
 # Documentation
 
-## Downloading and setting up
+## Downloading and setting up (Windows)
 
+1. Download and install Visual Studio Code and XAMPP.
 
+2.  After downloading and installing XAMPP, download Composer. When installing it will ask you for the php location which should automatically set to XAMPP, tick the box below it and continue. (I was using XAMPP 8.2 and Composer 2.7.7)
 
+3. Check that php and composer are working and correctly installed. You can open the command prompt and do "php" and "composer" to see if they are found. If they are not working you might need to restart your device.
 
+4. Open the XAMPP Control Panel and switch on the APACHE and MySQL
+
+5. Run "php artisan migrate:fresh --seed" inside the CatSystem folder to generate 
 
 
 

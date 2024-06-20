@@ -34,7 +34,7 @@ class CatsController extends Controller
         try {
             $cat = Cat::create($request->all());
 
-            return response()->json(['message' => 'Cat successfully created!', 'cat' => $cat,], 200);
+            return response()->json(['message' => 'Cat successfully created!', 'cat' => $cat,], 201); //Or 200
 
         } catch (\Exception $e) {
             return response()->json(['error' => 'Failed to create cat.'], 500);

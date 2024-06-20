@@ -19,7 +19,8 @@ class CatsController extends Controller
         }
     }
     public function create()
-    {
+    {   
+        //Return a view with a form to be filled in
         return view('cats.create');
     }
     public function store(Request $request)

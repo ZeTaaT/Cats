@@ -15,13 +15,23 @@
 
 2.  After downloading and installing XAMPP, download Composer. When installing it will ask you for the php location which should automatically set to XAMPP, tick the box below it and continue. (I was using XAMPP 8.2 and Composer 2.7.7)
 
-3. Check that php and composer are working and correctly installed. You can open the command prompt and do "php" and "composer" to see if they are found. If they are not working you might need to restart your device.
+3. Open Visual Studio and open the folder where you will have your project installed. For commands to work you need to be in the root directory. Be inside the last cat folder.
 
-4. Open the XAMPP Control Panel and switch on the APACHE and MySQL
+4. Check that composer is working and correctly installed. You can open the terminal and do "composer" to see if it is found. If it is not working you might need to restart your device.
 
-5. Run "php artisan migrate:fresh --seed" inside the CatSystem folder to generate 
+5. Do "composer install" to install all the dependecies. Wait until it is done.
 
+6. Create a .env file and copy everything from .env.example. Change the DB_CONNECTION to mysql.
 
+7. If you don't have APP_KEY in your .env you can generate it using "php artisan key:generate".
+
+8. Open the XAMPP Control Panel and switch on the APACHE and MySQL.
+
+9. Run "php artisan migrate" and then "php artisan migrate:fresh --seed" inside the CatSystem folder.
+
+10. Launch the serve with "php artisan serve" and go to the localhost stated, for me it is localhost:8000.
+
+11. Test out the the localhost:8000/api/cats and localhost:8000/api/cats/create
 
 
 

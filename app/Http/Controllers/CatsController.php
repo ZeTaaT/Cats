@@ -11,7 +11,7 @@ class CatsController extends Controller
     public function index()
     {   
         try {
-            $cats = Cat::select('name', 'dob', 'owner_name')->get(); // Retrieve all cats from database, only their name, dob and owner name
+            $cats = Cat::select('id', 'name', 'dob', 'owner_name')->get(); // Retrieve all cats from database, only their name, dob and owner name
 
             return response()->json($cats, 200);
         } catch (\Exception $e) {
